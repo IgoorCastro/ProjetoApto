@@ -1,0 +1,68 @@
+.bg-main {
+    background-color: #160E32;
+}
+
+
+.bg-nav-header {
+    background-image: url(..//img/sol-entre-nuvens.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.shadow-header {
+    --tw-shadow: 0 10px 15px -5px rgb(0 0 0 / 50%), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.bg-top-button {
+    background-color: rgba(220, 252, 231, 0.068);
+}
+
+.bg-rose {
+    background-color: rgba(252, 231, 243, 0.281);
+}
+
+.bc-red {
+    border: 1px dashed red;
+}
+
+.bc-blue {
+    border: 1px dashed blue;
+}
+
+.h-carousel {
+    height: 34rem;
+}
+
+.carousel-images {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images.slide-next {
+    transform: translateX(-100%);
+}
+
+.carousel-images.slide-prev {
+    transform: translateX(0);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.h-top-main {
+    height: 67%;
+}
