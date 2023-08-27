@@ -72,7 +72,7 @@
             <div class="flex-initial">
                 <!-- APTO INFO -->
                 <div class="relative bg-gray-200 shadow-lg">
-                    <div class="relative h-56 overflow-hidden content-center rounded-lg md:h-full">
+                    <div class="relative h-full overflow-hidden content-center rounded-lg">
                         <!-- TITULO DO APTO -->
                         <div id="apto-Title" class="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
                             <h2 class="text-xl md:text-3xl text-center font-bold tracking-tight text-gray-900">
@@ -105,26 +105,24 @@
                         <!-- INFOS + ICONS E VALORES JS -->
                         <div class="flex flex-row">
                             <!-- INFOS + ICONS -->
-                            <div class="flex flex-row md:flex-col px-2 md:py-0 md:p-3 w-full md:w-40">
-                                <div class="flex flex-col mr-auto">
-                                    <div id="qnt-Pessoas" class="flex flex-row">
+                            <div class="flex flex-col p-3">
+                                <div class="flex flex-col w-36">
+                                    <div id="qnt-Pessoas" class="flex flex-row py-1 md:py-2">
                                         <img src="icons/pessoas.svg" alt="Airbnb" class="w-8 md:w-10 m-left mr-2">
                                         <h4 class="w-full m-auto text-base md:text-lg text-gray-600">10 Pessoas
                                         </h4>
                                     </div>
-                                    <div id="qnt-Quartos" class="flex flex-row pt-1 md:pt-4 md:m-0">
+                                    <div id="qnt-Quartos" class="flex flex-row py-1 md:py-2">
                                         <img src="icons/quarto.svg" alt="Star" class="w-8 md:w-10 m-left mr-2">
                                         <h4 class="w-full m-auto text-base md:text-lg text-gray-600">3 Quartos
                                         </h4>
                                     </div>
-                                </div>
-                                <div class="flex flex-col ml-auto md:ml-0 w-36">
-                                    <div id="qnt-Camas" class="flex flex-row md:pt-4">
+                                    <div id="qnt-Camas" class="flex flex-row py-1 md:py-2">
                                         <img src="icons/cama.svg" alt="Booking" class="w-8 md:w-10 m-left mr-2">
                                         <h4 class="w-full m-auto text-base md:text-lg text-gray-600">8 Camas
                                         </h4>
                                     </div>
-                                    <div id="qnt-Banheiros" class="flex flex-row pt-1 md:pt-4 md:ml-auto md:m-0">
+                                    <div id="qnt-Banheiros" class="flex flex-row py-1 md:py-2">
                                         <img src="icons/banheiro.svg" alt="Booking" class="w-8 md:w-10 m-left mr-2">
                                         <h4 class="w-full m-auto text-base md:text-lg text-gray-600">2 Banheiros
                                         </h4>
@@ -133,27 +131,29 @@
                             </div>
 
                             <!-- VALORES / TELAS > MD -->
-                            <div class="flex flex-col hidden md:block w-52 ml-auto mr-6">
-                                <div class="bg-rose h-40 w-40 m-auto mt-5 rounded-lg shadow-md">
-                                    <!-- ICON -->
-                                    <div class="w-20 m-auto">
-                                        <img src="icons/valor.svg" alt="">
+                            <div class="flex w-min ml-auto mr-6 ">
+                                <div class="flex flex-col w-28 md:w-40 m-auto mt-auto mr-5 h-full">
+                                    <!-- ICON + VALORES -->
+                                    <div class="bg-content-preco rounded-lg shadow-md">
+                                        <div class="w-14 md:w-20 m-auto">
+                                            <img src="icons/valor.svg" alt="">
+                                        </div>
+                                        <!-- VALOR SITE DESCONTO -->
+                                        <div id="valor-Desconto" class="w-full mt-2">
+                                            <h5 class="text-red-400 line-through text-center">R$ 436</h5>
+                                        </div>
+                                        <!-- VALOR SITE -->
+                                        <div id="valor-Final" class="w-full mt-2">
+                                            <h5 class="text-gray-800 text-center text-xl">R$ 350</h5>
+                                        </div>
                                     </div>
-                                    <!-- VALOR SITE DESCONTO -->
-                                    <div id="valor-Desconto" class="w-full mt-2">
-                                        <h5 class="text-red-400 line-through text-center">R$ 436</h5>
-                                    </div>
-                                    <!-- VALOR SITE -->
-                                    <div id="valor-Final" class="w-full mt-2">
-                                        <h5 class="text-gray-800 text-center text-xl">R$ 350</h5>
-                                    </div>
-                                </div>
-                                <!-- BOTAO -->
-                                <div class="w-full my-3 m-auto">
-                                    <div class="w-min m-auto">
-                                        <a href="#"
-                                            class="bg-gradient-to-r from-green-200 to-green-500 border border-4 border-gray-400 text-gray-900 rounded-lg px-3 py-1 text-sm shadow-md md:px-10 lg:text-base hover:text-white"
-                                            aria-current="page">Alugar</a>
+                                    <!-- BOTAO -->
+                                    <div class="w-full h-max m-auto">
+                                        <div class="w-min h-min m-auto mt-auto ">
+                                            <a href="#" id="btn-Alugar"
+                                                class="bg-gradient-to-r from-green-400 to-green-600 border border-4 border-gray-400 rounded-lg px-7 py-1 text-sm shadow-md md:px-10 lg:text-base text-white hover:border-gray-700"
+                                                aria-current="page">Alugar</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -161,31 +161,6 @@
 
                     </div>
 
-                    <!-- VALORES / TELAS < MD -->
-                    <div class="flex flex-col w-52 mr-6 md:hidden w-full pb-4 pt-2">
-                        <div class="bg-rose h-28 w-32 m-auto rounded-lg shadow-md">
-                            <!-- ICON -->
-                            <div class="w-12 m-auto">
-                                <img src="icons/valor.svg" alt="">
-                            </div>
-                            <!-- VALOR SITE DESCONTO -->
-                            <div id="valor-Desconto2" class="w-full mt-0">
-                                <h5 class="text-red-400 line-through text-center text-sm">R$ 436</h5>
-                            </div>
-                            <!-- VALOR SITE -->
-                            <div id="valor-Final2" class="w-full mt-1">
-                                <h5 class="text-gray-800 text-center text-xl">R$ 350</h5>
-                            </div>
-                        </div>
-                        <!-- BOTAO -->
-                        <div class="w-full mt-3">
-                            <div class="w-min m-auto">
-                                <a href="#"
-                                    class="bg-gradient-to-r from-green-200 to-green-300 border border-4 border-gray-400 text-gray-700 rounded-lg px-7 py-1 text-base shadow-md hover:text-white"
-                                    aria-current="page">Alugar</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -196,20 +171,20 @@
                         <!-- Item 1 -->
                         <div id="carousel-img-1" class="hidden duration-300 ease-in-out" data-carousel-item="active">
                             <img src="img/carousel/apto10.jpg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="...">
                         </div>
 
                         <!-- Item 2 -->
                         <div id="carousel-img-2" class="hidden duration-300 ease-in-out" data-carousel-item>
                             <img id="carousel-img-2" src="img/carousel/apto8.jpg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="...">
                         </div>
                         <!-- Item 3 -->
                         <div id="carousel-img-3" class="hidden duration-300 ease-in-out" data-carousel-item>
                             <img id="carousel-img-3" src="img/carousel/apto7.jpg"
-                                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="...">
                         </div>
                     </div>
