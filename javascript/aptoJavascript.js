@@ -1,9 +1,24 @@
-const srcImg10 = ['img/carousel/apto10.jpg', 'img/carousel/apto10.jpg', 'img/carousel/apto10.jpg'];
+const srcImg10 = ['../img/carousel/apto10.jpg', '../img/carousel/apto10.jpg', '../img/carousel/apto10.jpg'];
 
-const srcImg8 = ['img/carousel/apto8.jpg', 'img/carousel/apto8.jpg', 'img/carousel/apto8.jpg'];
+const srcImg8 = ['../img/carousel/apto8.jpg', '../img/carousel/apto8.jpg', '../img/carousel/apto8.jpg'];
 
-const srcImg7 = ['img/carousel/apto7.jpg', 'img/carousel/apto7.jpg', 'img/carousel/apto7.jpg'];
+const srcImg7 = ['../img/carousel/apto7.jpg', '../img/carousel/apto7.jpg', '../img/carousel/apto7.jpg'];
 
+
+// Extrair o valor do parâmetro 'option' da URL
+const urlParams = new URLSearchParams(window.location.search);
+const option = urlParams.get('option');
+
+if (option === '1') {
+    changeCarouselImg(srcImg10);
+    changeAptoData("Apartamento para 10 pessoas", "4.9", "9.8", "10 Pessoas", "3 Quartos", "8 Camas", "2 Banheiros", "436", "350");
+} else if (option === '2') {
+    changeCarouselImg(srcImg8);
+    changeAptoData("Apartamento para 08 pessoas", "4.8", "9.7", "8 Pessoas", "2 Quartos", "6 Camas", "1 Banheiros", "415", "320");
+} else if (option === '3') {
+    changeCarouselImg(srcImg7);
+    changeAptoData("Apartamento para 07 pessoas", "4.7", "9.6", "7 Pessoas", "2 Quartos", "5 Camas", "1 Banheiros", "368", "290");
+}
 
 function changeCarouselImg(srcImg) {
     //IMG 1
@@ -40,11 +55,9 @@ function changeAptoData(aptoTitle, airbnbNota, bookingNota, qntPessoa, qntQuarto
 
     //Valor com desconto
     const divValorDesc = document.getElementById("valor-Desconto").querySelector('h5').textContent = "R$ " + valDesconto;
-    const divValorDesc2 = document.getElementById("valor-Desconto2").querySelector('h5').textContent = "R$ " + valDesconto;
 
     //Valor com desconto
     const divValorFinal = document.getElementById("valor-Final").querySelector('h5').textContent = "R$ " + valFinal;
-    const divValorFinal2 = document.getElementById("valor-Final2").querySelector('h5').textContent = "R$ " + valFinal;
 }
 
 function alertMensage(text) {
