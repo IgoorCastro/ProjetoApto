@@ -40,11 +40,9 @@ function changeAptoData(aptoTitle, airbnbNota, bookingNota, qntPessoa, qntQuarto
 
     //Valor com desconto
     const divValorDesc = document.getElementById("valor-Desconto").querySelector('h5').textContent = "R$ " + valDesconto;
-    const divValorDesc2 = document.getElementById("valor-Desconto2").querySelector('h5').textContent = "R$ " + valDesconto;
 
     //Valor com desconto
     const divValorFinal = document.getElementById("valor-Final").querySelector('h5').textContent = "R$ " + valFinal;
-    const divValorFinal2 = document.getElementById("valor-Final2").querySelector('h5').textContent = "R$ " + valFinal;
 }
 
 function alertMensage(text) {
