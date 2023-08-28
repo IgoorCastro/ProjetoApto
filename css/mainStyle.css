@@ -19,8 +19,16 @@
     background-color: rgba(220, 252, 231, 0.068);
 }
 
-.bg-rose {
-    background-color: rgba(252, 231, 243, 0.281);
+.bg-content-preco {
+    background-color: rgba(245, 208, 254, 0.411);
+}
+
+.bg-content-preco2 {
+    background-color: rgb(0, 87, 194) !important;
+}
+
+.bg-content-contato {
+    background-color: rgb(30 27 75);
 }
 
 .bc-red {
@@ -65,4 +73,11 @@
 
 .h-top-main {
     height: 67%;
+}
+
+.text-mini {
+    font-size: 0.1rem;
+    /* 12px */
+    line-height: 1rem;
+    /* 16px */
 }
