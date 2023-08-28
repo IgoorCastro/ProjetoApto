@@ -51,38 +51,52 @@ function alertMensage(text) {
     alert(text);
 }
 
+function hiddenSectionInicial() {
+    document.getElementById("section-inicial").classList.add("hidden");
+    document.getElementById("section-apto-data").className = "";
+}
+
+function hiddenSectionAptoData() {
+    document.getElementById("section-apto-data").classList.add("hidden");
+    document.getElementById("section-inicial").className = "";
+}
+
+document.getElementById("btn-Logo").addEventListener("click", function () {
+    hiddenSectionAptoData();
+});
+
 document.getElementById("btn-Wpp").addEventListener("click", function () {
     alertMensage("*Atenção: Você está sendo direcionado para nosso Whatsapp!*\nLeo e Valeria agradece.\n\nClique em 'Ok' para continuar.");
 
     window.open("https://wa.me/5512997135681?text=Digite+sua+mensagem+aqui.", "_blank");
 });
 
-function redirectToPage(option) {
-    let url = "";  // URL da nova página
 
-    switch (option) {
-        case "option1":
-            url = "../pag/apartamentos.html?option=1";
-            break;
-        case "option2":
-            url = "../pag/apartamentos.html?option=2";
-            break;
-        case "option3":
-            url = "../pag/apartamentos.html?option=3";
-            break;
-    }
+document.getElementById("btn-Alugar").addEventListener("click", function () {
+    alertMensage("*Atenção: Aluguel será feito via Whatsapp!*\nNúmero de contato: (12) 99713-5681.\nLeo e Valeria agradece.\n\nClique em 'Ok' para continuar.");
 
-    window.location.href = url;
-}
+    window.open("https://wa.me/5512997135681?text=Digite+sua+mensagem+aqui.", "_blank");
+});
 
 document.getElementById("button10P").addEventListener("click", function () {
-    redirectToPage("option1");
+
+    hiddenSectionInicial();
+    changeCarouselImg(srcImg10);
+    changeAptoData("Apartamento para 10 pessoas", "4.9", "9.8", "10 Pessoas", "3 Quartos", "8 Camas", "2 Banheiros", "436", "350");
+
+
 });
 
 document.getElementById("button8P").addEventListener("click", function () {
-    redirectToPage("option2");
+    hiddenSectionInicial();
+    changeCarouselImg(srcImg8);
+    changeAptoData("Apartamento para 08 pessoas", "4.8", "9.7", "8 Pessoas", "2 Quartos", "6 Camas", "1 Banheiros", "415", "320");
+
 });
 
 document.getElementById("button7P").addEventListener("click", function () {
-    redirectToPage("option3");
+    hiddenSectionInicial();
+    changeCarouselImg(srcImg7);
+    changeAptoData("Apartamento para 07 pessoas", "4.7", "9.6", "7 Pessoas", "2 Quartos", "5 Camas", "1 Banheiros", "368", "290");
+
 });
