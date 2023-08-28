@@ -68,7 +68,7 @@ document.getElementById("btn-Alugar").addEventListener("click", function () {
     alertMensage("*Atenção: Aluguel será feito via Whatsapp!*\nNúmero de contato: (12) 99713-5681.\nLeo e Valeria agradece.\n\nClique em 'Ok' para continuar.");
 
     window.open("https://wa.me/5512997135681?text=Digite+sua+mensagem+aqui.", "_blank");
-});
+})
 
 document.getElementById("button10P").addEventListener("click", function () {
     changeCarouselImg(srcImg10);
