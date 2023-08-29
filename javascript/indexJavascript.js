@@ -49,10 +49,30 @@ function alertMensage(text) {
     alert(text);
 }
 
-function hiddenSectionInicial() {
-    document.getElementById("section-inicial").classList.add("hidden");
-    document.getElementById("section-apto-data").className = "";
+function slowFade(element, callback) { // Quando desejar esconder a content, adicione a classe "slow-fade" e, em seguida, defina a opacidade como 0
+    const contentToHide = document.getElementById(element); // Substitua "sua-content-id" pelo ID da sua content
+    contentToHide.classList.add("slow-fade");
+    contentToHide.style.opacity = 0;
+
+    // Depois de algum tempo, você pode remover a content ou ajustar o display conforme necessário
+    setTimeout(() => {
+        contentToHide.style.display = "none"; // Ou ação para remover a content
+        callback();
+    }, 1000); // Aguarde por 1 segundo (duração da transição)
 }
+
+function hiddenSectionInicial() {
+    slowFade("section-inicial", function () {
+        document.getElementById("loadingContent").style.display = "block";
+
+        setTimeout(function () {
+            document.getElementById("loadingContent").style.display = "none";
+            document.getElementById("section-apto-data").className = "";
+        }, 1500);
+    });
+
+}
+
 
 function hiddenSectionAptoData() {
     document.getElementById("section-apto-data").classList.add("hidden");
@@ -77,24 +97,36 @@ document.getElementById("btn-Alugar").addEventListener("click", function () {
 });
 
 document.getElementById("button10P").addEventListener("click", function () {
-
-    hiddenSectionInicial();
-    changeCarouselImg(srcImg10);
-    changeAptoData("Apartamento para 10 pessoas", "4.9", "9.8", "10 Pessoas", "3 Quartos", "8 Camas", "2 Banheiros", "436", "350");
-
-
+    if (document.getElementById("section-inicial").classList.contains("hidden")) {
+        changeCarouselImg(srcImg10);
+        changeAptoData("Apartamento para 10 pessoas", "4.9", "9.8", "10 Pessoas", "3 Quartos", "8 Camas", "2 Banheiros", "436", "350");
+    } else {
+        hiddenSectionInicial();
+        changeCarouselImg(srcImg10);
+        changeAptoData("Apartamento para 10 pessoas", "4.9", "9.8", "10 Pessoas", "3 Quartos", "8 Camas", "2 Banheiros", "436", "350");
+    }
 });
 
 document.getElementById("button8P").addEventListener("click", function () {
-    hiddenSectionInicial();
-    changeCarouselImg(srcImg8);
-    changeAptoData("Apartamento para 08 pessoas", "4.8", "9.7", "8 Pessoas", "2 Quartos", "6 Camas", "1 Banheiros", "415", "320");
+    if (document.getElementById("section-inicial").classList.contains("hidden")) {
+        changeCarouselImg(srcImg8);
+        changeAptoData("Apartamento para 08 pessoas", "4.8", "9.7", "8 Pessoas", "2 Quartos", "6 Camas", "1 Banheiros", "415", "320");
+    } else {
+        hiddenSectionInicial();
+        changeCarouselImg(srcImg8);
+        changeAptoData("Apartamento para 08 pessoas", "4.8", "9.7", "8 Pessoas", "2 Quartos", "6 Camas", "1 Banheiros", "415", "320");
+    }
 
 });
 
 document.getElementById("button7P").addEventListener("click", function () {
-    hiddenSectionInicial();
-    changeCarouselImg(srcImg7);
-    changeAptoData("Apartamento para 07 pessoas", "4.7", "9.6", "7 Pessoas", "2 Quartos", "5 Camas", "1 Banheiros", "368", "290");
+    if (document.getElementById("section-inicial").classList.contains("hidden")) {
+        changeCarouselImg(srcImg7);
+        changeAptoData("Apartamento para 07 pessoas", "4.7", "9.6", "7 Pessoas", "2 Quartos", "5 Camas", "1 Banheiros", "368", "290");
+    } else {
+        hiddenSectionInicial();
+        changeCarouselImg(srcImg7);
+        changeAptoData("Apartamento para 07 pessoas", "4.7", "9.6", "7 Pessoas", "2 Quartos", "5 Camas", "1 Banheiros", "368", "290");
+    }
 
 });

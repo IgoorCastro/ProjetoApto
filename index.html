@@ -13,8 +13,6 @@
     <!-- IMPORT TAILWINDCSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-
-
     <title>Apartamento Hilda</title>
 </head>
 
@@ -66,9 +64,9 @@
         </nav>
     </header>
 
-    <main class="mt-5 h-min">
+    <main class="mt-5 h-screen">
         <!-- SECTION INICIAL -->
-        <section id="section-inicial" class="">
+        <section id="section-inicial" class="section-inicial">
             <!-- CAROUSEl FOTOS -->
             <div class="flex flex-col mx-2 lg:mx-10 h-min md:h-min">
                 <!-- CAROUSEL -->
@@ -253,7 +251,7 @@
                 <!-- CAROUSEL -->
                 <div class="flex-auto">
                     <div id="controls-carousel" class="relative w-full h-full" data-carousel="static">
-                        <div class="relative h-56 overflow-hidden content-center md:h-80 lg:h-full">
+                        <div id="carousel-img" class="relative h-56 overflow-hidden content-center md:h-80 lg:h-full">
                             <!-- Item 1 -->
                             <div id="carousel-img-1" class="hidden duration-300 ease-in-out"
                                 data-carousel-item="active">
@@ -306,6 +304,14 @@
 
             </section>
         </section>
+
+        <!-- Elemento de loading -->
+        <div id="loadingContent" class="hidden h-full">
+            <div class="w-max m-auto mt-5">
+                <div class="loader m-auto"></div>
+                <p class="text-xl mt-5">Carregando apartamento</p>
+            </div>
+        </div>
     </main>
 
     <script type="text/javascript" src="javascript/indexJavascript.js"></script>
