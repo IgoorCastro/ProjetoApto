@@ -4,6 +4,7 @@ const srcImg8 = ['img/carousel/apto8.jpg', 'img/carousel/apto8.jpg', 'img/carous
 
 const srcImg7 = ['img/carousel/apto7.jpg', 'img/carousel/apto7.jpg', 'img/carousel/apto7.jpg'];
 
+var selectApto;
 
 function changeCarouselImg(srcImg) {
     //IMG 1
@@ -61,16 +62,25 @@ function slowFade(element, callback) { // Quando desejar esconder a content, adi
     }, 1000); // Aguarde por 1 segundo (duração da transição)
 }
 
-function hiddenSectionInicial() {
-    slowFade("section-inicial", function () {
+//loadingContent display = "none";
+//time padrao: 1500
+//contentToOpen: pode ser uma lista de até 2 containers!
+function loadingContent(time, contentToClose, contentToOpen) {
+    slowFade(contentToClose, function () {
         document.getElementById("loadingContent").style.display = "block";
-
         setTimeout(function () {
             document.getElementById("loadingContent").style.display = "none";
-            document.getElementById("section-apto-data").className = "";
-        }, 1500);
+            //SECTIO QUU VAI ENTRAR
+            if (Array.isArray(contentToOpen)) {
+                document.getElementById(contentToOpen[0]).classList.remove('hidden');
+                document.getElementById(contentToOpen[1]).classList.remove('hidden');
+            }
+            else {
+                document.getElementById(contentToClose).classList.add('hidden');
+                document.getElementById(contentToOpen).classList.remove('hidden');
+            }
+        }, time);
     });
-
 }
 
 
@@ -97,36 +107,38 @@ document.getElementById("btn-Alugar").addEventListener("click", function () {
 });
 
 document.getElementById("button10P").addEventListener("click", function () {
-    if (document.getElementById("section-inicial").classList.contains("hidden")) {
-        changeCarouselImg(srcImg10);
-        changeAptoData("Apartamento para 10 pessoas", "4.9", "9.8", "10 Pessoas", "3 Quartos", "8 Camas", "2 Banheiros", "436", "350");
-    } else {
-        hiddenSectionInicial();
-        changeCarouselImg(srcImg10);
-        changeAptoData("Apartamento para 10 pessoas", "4.9", "9.8", "10 Pessoas", "3 Quartos", "8 Camas", "2 Banheiros", "436", "350");
-    }
+    const aptoDataId = "apto10-data";//Id do botão no html
+
+    if (document.getElementById("section-inicial").style.display == "none") {
+        if (document.getElementById(aptoDataId).classList.contains("hidden"))
+            loadingContent(500, selectApto, aptoDataId);
+    } else
+        loadingContent(1500, "section-inicial", ["section-apto-data", aptoDataId]);
+
+    selectApto = aptoDataId;
 });
 
 document.getElementById("button8P").addEventListener("click", function () {
-    if (document.getElementById("section-inicial").classList.contains("hidden")) {
-        changeCarouselImg(srcImg8);
-        changeAptoData("Apartamento para 08 pessoas", "4.8", "9.7", "8 Pessoas", "2 Quartos", "6 Camas", "1 Banheiros", "415", "320");
-    } else {
-        hiddenSectionInicial();
-        changeCarouselImg(srcImg8);
-        changeAptoData("Apartamento para 08 pessoas", "4.8", "9.7", "8 Pessoas", "2 Quartos", "6 Camas", "1 Banheiros", "415", "320");
-    }
+    const aptoDataId = "apto8-data";//Id do botão no html
 
+    if (document.getElementById("section-inicial").style.display == "none") {
+        if (document.getElementById(aptoDataId).classList.contains("hidden"))
+            loadingContent(500, selectApto, aptoDataId);
+    } else
+        loadingContent(1500, "section-inicial", ["section-apto-data", aptoDataId]);
+
+    selectApto = aptoDataId;
 });
 
 document.getElementById("button7P").addEventListener("click", function () {
-    if (document.getElementById("section-inicial").classList.contains("hidden")) {
-        changeCarouselImg(srcImg7);
-        changeAptoData("Apartamento para 07 pessoas", "4.7", "9.6", "7 Pessoas", "2 Quartos", "5 Camas", "1 Banheiros", "368", "290");
-    } else {
-        hiddenSectionInicial();
-        changeCarouselImg(srcImg7);
-        changeAptoData("Apartamento para 07 pessoas", "4.7", "9.6", "7 Pessoas", "2 Quartos", "5 Camas", "1 Banheiros", "368", "290");
-    }
+    const aptoDataId = "apto7-data";//Id do botão no html
+
+    if (document.getElementById("section-inicial").style.display == "none") {
+        if (document.getElementById(aptoDataId).classList.contains("hidden"))
+            loadingContent(500, selectApto, aptoDataId);
+    } else
+        loadingContent(1500, "section-inicial", ["section-apto-data", aptoDataId]);
+
+    selectApto = aptoDataId;
 
 });
