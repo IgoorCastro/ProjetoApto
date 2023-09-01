@@ -66,6 +66,9 @@ function slowFade(element, callback) { // Quando desejar esconder a content, adi
 //time padrao: 1500
 //contentToOpen: pode ser uma lista de até 2 containers!
 function loadingContent(time, contentToClose, contentToOpen) {
+    // alert(contentToClose);
+    // alert(contentToOpen);
+    //alert("selectApto: " + selectApto);
     slowFade(contentToClose, function () {
         document.getElementById("loadingContent").style.display = "block";
         setTimeout(function () {
@@ -77,7 +80,12 @@ function loadingContent(time, contentToClose, contentToOpen) {
             }
             else {
                 document.getElementById(contentToClose).classList.add('hidden');
-                document.getElementById(contentToOpen).classList.remove('hidden');
+                if (document.getElementById(contentToOpen).style.display = "none") {
+                    document.getElementById(contentToOpen).removeAttribute("style");
+                    document.getElementById(contentToOpen).classList.remove('hidden');
+                }
+                else
+                    document.getElementById(contentToOpen).classList.remove('hidden');
             }
         }, time);
     });
