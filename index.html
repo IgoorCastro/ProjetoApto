@@ -16,8 +16,8 @@
     <title>Apartamento Hilda</title>
 </head>
 
-<body class="h-screen w-100">
-    <header class="">
+<body class="h-min w-100 grid grid-cols-1 content-start md:content-between">
+    <header class="h-min">
         <!-- SECTION TOP HEADER -->
         <section class=" bg-main shadow-header relative">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -42,18 +42,18 @@
                     <div class="flex flex-1 items-center justify-center sm:items-stretch">
                         <div class="sm:ml-6 sm:block">
                             <div class="flex justify-center mb-2">
-                                <h3 class="text-xl text-gray-800">Apartamentos</h3>
+                                <h3 class="text-2xl text-gray-800">Apartamentos</h3>
                             </div>
                             <div class="flex space-x-4">
                                 <!-- Current: "bg-top-button text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                                 <a id="button10P"
-                                    class="bg-top-button border border-4 border-gray-400 text-gray-700 rounded-full px-3 py-2 text-sm font-medium shadow-md md:px-20 lg:text-base hover:bg-blue-900 hover:text-white focus:bg-blue-900 focus:text-white"
+                                    class="cursor-pointer bg-top-button border border-4 border-gray-400 text-gray-700 rounded-full px-3 py-2 text-xl font-medium shadow-md md:px-20 lg:text-base hover:bg-blue-900 hover:text-white focus:bg-blue-900 focus:text-white"
                                     aria-current="page">10 Pessoas</a>
                                 <a id="button8P"
-                                    class="bg-top-button border border-4 border-gray-400 text-gray-700 rounded-full px-3 py-2 text-sm font-medium shadow-md md:px-20 lg:text-base hover:bg-blue-900 hover:text-white focus:bg-blue-900 focus:text-white">8
+                                    class="cursor-pointer bg-top-button border border-4 border-gray-400 text-gray-700 rounded-full px-3 py-2 text-xl font-medium shadow-md md:px-20 lg:text-base hover:bg-blue-900 hover:text-white focus:bg-blue-900 focus:text-white">8
                                     Pessoas</a>
                                 <a id="button7P"
-                                    class="bg-top-button border border-4 border-gray-400 text-gray-700 rounded-full px-3 py-2 text-sm font-medium shadow-md md:px-20 lg:text-base hover:bg-blue-900 hover:text-white focus:bg-blue-900 focus:text-white">7
+                                    class="cursor-pointer bg-top-button border border-4 border-gray-400 text-gray-700 rounded-full px-3 py-2 text-xl font-medium shadow-md md:px-20 lg:text-base hover:bg-blue-900 hover:text-white focus:bg-blue-900 focus:text-white">7
                                     Pessoas</a>
                             </div>
                         </div>
@@ -64,15 +64,15 @@
         </nav>
     </header>
 
-    <main class="mt-5 h-screen">
+    <main class="flex h-min w-full mt-0">
         <!-- SECTION INICIAL -->
-        <section id="section-inicial" class="section-inicial">
+        <section id="section-inicial" class="flex flex-col section-inicial w-full">
             <!-- CAROUSEl FOTOS -->
-            <div class="flex flex-col mx-2 lg:mx-10 h-min md:h-min">
+            <div class="flex flex-col mb-1">
                 <!-- CAROUSEL -->
-                <div class="flex-auto">
+                <div class="flex-auto lg:mx-14">
                     <div id="controls-carousel" class="relative w-full h-min" data-carousel="static">
-                        <div class="relative h-56 overflow-hidden content-center md:h-80 lg:h-96">
+                        <div class="relative h-56 overflow-hidden content-center h-96 rounded-sm">
                             <!-- Item 1 -->
                             <div id="carousel-img-1" class="hidden duration-300 ease-in-out"
                                 data-carousel-item="active">
@@ -124,7 +124,8 @@
                 </div>
             </div>
 
-            <div class="my-3 py-4 w-full h-min bg-content-contato">
+            <!-- BANNER CONTATO -->
+            <div class="py-4 lg:py-2 w-full h-min  bg-content-contato">
                 <div class="flex flex-row w-max m-auto">
                     <div class="w-max">
                         <div class="w-12 md:w-16 m-auto mr-3">
@@ -149,10 +150,68 @@
                     </div>
                 </div>
             </div>
+
+            <!-- SECTION ANFITRIOES -->
+            <section class="flex-inital w-full">
+                
+                <div class="flex flex-col w-full px-14 mt-7">
+                    <!-- TITULO -->
+                    <div class="flex flex-row my-10 w-full h-10">
+                        <div class="h-10 w-max">
+                            <h4 class="text-3xl text-gray-800">Anfitriões</h4>                      
+                        </div>
+                        <!-- HR -->
+                        <div class="flex items-center w-full pl-4">
+                            <div class="h-min w-full">
+                                <hr class="mt-1 h-0.5 bg-gray-500 border-0 rounded dark:bg-gray-800">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ANFITRIOES -->
+                    <div class="flex flex-col px-10 mb-5">
+                        <!-- LEO -->
+                        <div class="flex flex-row">
+                            <!-- FOTO -->
+                            <div class="w-44">
+                                <img src="img/leo.png" alt="">
+                            </div>
+
+                            <!-- TITULO + DESCRICAO -->
+                            <div class="ml-14 h-max w-full">
+                                <h5 class="text-2xl mt-2 mb-3">Leo</h5>
+                                <p class="text-md md:text-xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos suscipit consequuntur eligendi ratione rem accusamus rerum blanditiis, sit neque cupiditate.</p>
+                            </div>
+                        </div>
+
+                        
+
+                    </div>
+
+                    <div class="flex flex-col px-10">
+                        <!-- LEO -->
+                        <div class="flex flex-row">
+                            <!-- FOTO -->
+                            <div class="w-44">
+                                <img src="img/rosa.jpg" alt="">
+                            </div>
+
+                            <!-- TITULO + DESCRICAO -->
+                            <div class="ml-14 h-max w-full">
+                                <h5 class="text-2xl mt-2 mb-3">Valeria</h5>
+                                <p class="text-sm md:text-xl">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos suscipit consequuntur eligendi ratione rem accusamus rerum blanditiis, sit neque cupiditate.</p>
+                            </div>
+                        </div>
+
+                        
+
+                    </div>
+                </div>            
+            </section>
         </section>
 
         <!-- APTOS DATA -->
-        <section id="section-apto-data" class="hidden">
+        <section id="section-apto-data" class="w-full hidden mb-auto">
             <!-- APTO 10 INFO + CAROUSEl FOTOS -->
             <section id="apto10-data" class="flex flex-col lg:flex-row mx-2 lg:mx-12 hidden">
                 <div class="flex-initial">
@@ -606,12 +665,14 @@
         </section>
 
         <!-- Elemento de loading -->
-        <div id="loadingContent" class="hidden h-full">
+        <div id="loadingContent" class="hidden h-full w-full md:mb-52">
             <div class="w-max m-auto mt-5">
                 <div class="loader m-auto"></div>
                 <p class="text-xl mt-5">Carregando apartamento</p>
             </div>
         </div>
+
+        
     </main>
 
     <script type="text/javascript" src="javascript/indexJavascript.js"></script>
