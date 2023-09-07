@@ -1,5 +1,5 @@
 .bg-main {
-    background-color: #160E32;
+    background-color: #160E32 !important;
 }
 
 
@@ -80,6 +80,10 @@
     /* 12px */
     line-height: 1rem;
     /* 16px */
+}
+
+.hr-anfitrioes{
+    background-color: #160E32 !important;
 }
 
 .slow-fade {
